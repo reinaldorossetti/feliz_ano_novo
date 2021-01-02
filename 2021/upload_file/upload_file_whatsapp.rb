@@ -13,11 +13,12 @@ class UploadWhatsApp
   def initialize
     visit '/'
     $nameList = ["ruby", "QA Produtos", "Qualidade como Cultura"]
+    $dir = "#{__dir__}\\arquivo\\"
   end
 
   def upload_file
     $nameList.each do |name|
-      files = Dir.entries("#{__dir__}\\arquivo\\")
+      files = Dir.entries($dir)
       filepath = "#{__dir__}\\arquivo\\#{files.sample}"
       puts filepath, name
 
